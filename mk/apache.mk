@@ -44,7 +44,7 @@ _USER_VARS.apache=	PKG_APACHE_DEFAULT
 _PKG_VARS.apache=	PKG_APACHE_ACCEPTED USE_APR
 _SYS_VARS.apache=	PKG_APACHE APACHE_PKG_PREFIX
 
-.include "bsd.fast.prefs.mk"
+.include "../../mk/bsd.fast.prefs.mk"
 
 PKG_APACHE_DEFAULT?=		apache24
 BUILD_DEFS+=			PKG_APACHE_DEFAULT
