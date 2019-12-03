@@ -12,22 +12,14 @@ COMMENT=	TODO: Short description of the package
 
 WRKSRC=		${WRKDIR} # More than one possibility -- please check manually.
 
-NO_CONFIGURE=	yes
-do-build:
-	export genmqpkg_inc32=0
-	export genmqpkg_incnls=0   
-	export genmqpkg_inccpp=0   
-	export genmqpkg_inccbl=0   
-	export genmqpkg_inctls=1   
-	export genmqpkg_incams=1   
-	export genmqpkg_inccics=1 
-	export genmqpkg_incadm=1   
-	export genmqpkg_incras=1   
-	export genmqpkg_incsamp=0 
-	export genmqpkg_incsdk=1
-	cd ${WRKSRC}/bin && ./genmqpkg.sh
+IBMMQ_ENV=	genmqpkg_inc32=0 genmqpkg_incnls=0 genmqpkg_inccpp=0 genmqpkg_inccbl=0 genmqpkg_inctls=1 genmqpkg_incams=1 genmqpkg_inccics=1 genmqpkg_incadm=1 genmqpkg_incras=1 genmqpkg_incsamp=0 genmqpkg_incsdk=1
 
-#NO_INSTALL=	yes
+NO_CONFIGURE=	yes
+NO_BUILD=	yes
+
+do-install:
+	env ${IBMMQ_ENV} sh -c 'cd ${WRKSRC}/bin && ./genmqpkg.sh -b ${PREFIX}/ibmmq_client'
+
 # TODO: Migrate MASTER_SITES to PYPI
 
 .include "../../mk/bsd.pkg.mk"
