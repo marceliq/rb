@@ -1,7 +1,7 @@
 # $NetBSD$
 
-DISTNAME=	9.1.3.0-IBM-MQC-Redist-LinuxX64
-PKGNAME=	ibmmq-client-redist-9.1.3.0
+DISTNAME=	9.1.4.0-IBM-MQC-Redist-LinuxX64
+PKGNAME=	ibmmq-client-redist-9.1.4.0
 CATEGORIES=	# TODO: add primary category
 MASTER_SITES=	https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqdev/redist/
 
