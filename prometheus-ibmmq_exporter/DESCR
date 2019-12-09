@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README.md
+
+# mq-metric-samples
+
+This repository contains a collection of IBM® MQ sample clients that utilize
+the [IBM® MQ golang metric packages](https://github.com/ibm-messaging/mq-golang)
+to provide a program that can be used with existing monitoring technologies
+such as Prometheus, AWS CloudWatch, etc.
+
+## Health Warning
+
+This package is provided as-is with no guarantees of support or updates.
+There are also no guarantees of compatibility with any future versions of the package;
+interfaces and functions are subject to change based on any feedback.
+
+These programs use a specific version of the `mqmetric` and `ibmmq` golang packages.
+Those packages are in the [mq-golang repository](https://github.com/ibm-messaging/mq-golang)
+and are also included in the `vendor` tree of this repository.
+
+## Getting started
+
+### Requirements
+...
