@@ -21,6 +21,7 @@ GO_BUILD_PATTERN=	${GO_SRCPATH}/cmd/mq_prometheus/...
 #CHECK_RELRO_SKIP+=	bin/mq_prometheus
 FORTIFY_SUPPORTED=	no
 
+USE_TOOLS+=	chrpath
 TOOLS_CREATE+=	go
 TOOLS_PATH.go=	${GO}
 #CHECK_SHLIBS_SUPPORTED=	no
@@ -37,7 +38,7 @@ MAKE_ENV+=	CGO_LDFLAGS="-L${BUILDLINK_PREFIX.ibmmq-client-redist}/ibmmq_client/l
 MAKE_ENV+=	GOBUILD_FLAGS=
 
 #do-build:
-#	${ECHO} ${ENV}
+#	${ECHO} ${TOOLS_PATH.chrpath}
 #	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO} build -o ${DESTDIR}${PREFIX}/bin/mq_prometheus cmd/mq_prometheus/*.go
 #	${ECHO} "cd ${WRKSRC} && ls && ${SETENV} ${MAKE_ENV} ${GO}"
 #	${ECHO} ${GO_ENV}
