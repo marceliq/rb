@@ -15,6 +15,9 @@ BUILDLINK_TREE+=	ibmmq-client-redist
 .if !defined(IBMMQ_CLIENT_REDIST_BUILDLINK3_MK)
 IBMMQ_CLIENT_REDIST_BUILDLINK3_MK:=
 
+BUILDLINK_LIBDIRS.ibmmq-client-redist+=		ibmmq_client/lib64
+BUILDLINK_RPATHDIRS.ibmmq-client-redist+=	ibmmq_client/lib64
+
 BUILDLINK_API_DEPENDS.ibmmq-client-redist+=	ibmmq-client-redist>=9.1.4.0
 BUILDLINK_PKGSRCDIR.ibmmq-client-redist?=	../../rb/ibmmq
 .endif	# IBMMQ_CLIENT_REDIST_BUILDLINK3_MK

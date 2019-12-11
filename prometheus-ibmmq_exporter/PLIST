@@ -1,4 +1,2 @@
 @comment $NetBSD$
-@comment TODO: to fill this file with the file listing:
-@comment TODO: 1. run "/app/elastic/dists/prometheus/ibmmq_exporter/bin/bmake package"
-@comment TODO: 2. run "/app/elastic/dists/prometheus/ibmmq_exporter/bin/bmake print-PLIST"
+bin/mq_prometheus
