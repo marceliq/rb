@@ -28,8 +28,8 @@ BUILD_TARGET=           #
 
 MAKE_ENV+=	MQ_INSTALLATION_PATH="${BUILDLINK_PREFIX.ibm-mqc-redist}/ibm-mqc-redist"
 MAKE_ENV+=	CGO_CFLAGS="-I${BUILDLINK_PREFIX.ibm-mqc-redist}/ibm-mqc-redist/inc"
-MAKE_ENV+=	CGO_LDFLAGS_ALLOW="-Wl,-rpath.*"
-MAKE_ENV+=	CGO_LDFLAGS="-L${BUILDLINK_PREFIX.ibm-mqc-redist}/ibm-mqc-redist/lib64 -Wl,-rpath,${BUILDLINK_PREFIX.ibm-mqc-redist}/ibm-mqc-redist/lib64"
+MAKE_ENV+=	CGO_LDFLAGS_ALLOW="-Wl,-.*"
+MAKE_ENV+=	CGO_LDFLAGS="-Wl,--strip-all -L${BUILDLINK_PREFIX.ibm-mqc-redist}/ibm-mqc-redist/lib64 -Wl,-rpath,${BUILDLINK_PREFIX.ibm-mqc-redist}/ibm-mqc-redist/lib64"
 MAKE_ENV+=	GOBUILD_FLAGS=
 
 post-build:
