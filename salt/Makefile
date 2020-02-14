@@ -24,6 +24,9 @@ DEPENDS+=	${PYPKGPREFIX}-psutil-[0-9]*:../../sysutils/py-psutil
 DEPENDS+=	${PYPKGPREFIX}-cryptodome-[0-9]*:../../security/py-cryptodome
 DEPENDS+=	${PYPKGPREFIX}-zmq>=2.2.0:../../net/py-zmq
 
+-# Some modules are still not (as of 2019.2.0) 3.x compatible.
+-PYTHON_VERSIONS_ACCEPTED=	27
+
 .include "../../lang/python/pyversion.mk"
 .if ${_PYTHON_VERSION} == 27
 DEPENDS+= ${PYPKGPREFIX}-futures-[0-9]*:../../devel/py-futures
