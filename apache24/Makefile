@@ -1,13 +1,12 @@
-# $NetBSD: Makefile,v 1.86 2019/09/07 13:22:28 adam Exp $
+# $NetBSD: Makefile,v 1.89 2020/04/06 08:27:26 wiz Exp $
 #
 # When updating this package, make sure that no strings like
 # "PR 12345" are in the commit message. Upstream likes
 # to reference their own PRs this way, but this ends up
 # in NetBSD GNATS.
 
-DISTNAME=	httpd-2.4.41
+DISTNAME=	httpd-2.4.43
 PKGNAME=	${DISTNAME:S/httpd/apache/}
-PKGREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE:=httpd/}
 MASTER_SITES+=	http://archive.apache.org/dist/httpd/
@@ -26,7 +25,6 @@ USE_LIBTOOL=		yes
 USE_TOOLS+=		pax perl pkg-config
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-layout=NetBSD
-CONFIGURE_ARGS+=	--sbindir=${PREFIX}/bin
 CONFIGURE_ARGS+=	--enable-mods-shared=all
 CONFIGURE_ARGS+=	--enable-so
 CONFIGURE_ARGS+=	--with-apr=${BUILDLINK_PREFIX.apr}

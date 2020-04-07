@@ -17,7 +17,7 @@ then
 	. /etc/rc.subr
 
 	rcvar=$name
-	command="@PREFIX@/bin/httpd"
+	command="@PREFIX@/sbin/httpd"
 	command_args="-k start"
 	pidfile="@VARBASE@/run/httpd.pid"
 	required_files="@PKG_SYSCONFDIR@/httpd.conf"
@@ -27,7 +27,7 @@ then
 	load_rc_config $name
 	run_rc_command "$1"
 else
-	ctl_command="@PREFIX@/bin/apachectl"
+	ctl_command="@PREFIX@/sbin/apachectl"
 
 	if [ ! -x ${ctl_command} ]; then
 		return
