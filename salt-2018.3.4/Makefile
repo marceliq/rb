@@ -1,8 +1,12 @@
-# $NetBSD: Makefile,v 1.71 2019/11/13 14:47:59 adam Exp $
+# $NetBSD: Makefile,v 1.67 2018/10/25 09:08:37 adam Exp $
 
-DISTNAME=	salt-2019.2.4
+DISTNAME=	salt-2018.3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_PYPI:=s/salt/}
+
+PATCHFILES=	51931.patch
+PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/saltstack/salt/pull/
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://saltstack.org/
