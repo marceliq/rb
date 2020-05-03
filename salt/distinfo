@@ -4,3 +4,4 @@ SHA1 (salt-2019.2.4.tar.gz) = 44c8337105733cfd3cc3bbef734e22330d2e053f
 RMD160 (salt-2019.2.4.tar.gz) = 22345ca42526875cc859e71fcdf1fbe151975f41
 SHA512 (salt-2019.2.4.tar.gz) = 9e621cbd78ead1060a2b0c07e7ef02e8c4590360a95c51ac29fa8c1add34f617e4407dd28b67cae3b0fd68b333782185edcf1159edd2db08e8b4e79b6b07a63f
 Size (salt-2019.2.4.tar.gz) = 14572556 bytes
+SHA1 (patch-salt_version.py) = 1827dac3609a938fae38ee5dfd2a873c9723dfbd
