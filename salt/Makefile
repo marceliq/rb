@@ -4,6 +4,10 @@ DISTNAME=	salt-2019.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_PYPI:=s/salt/}
 
+PATCHFILES=	57090.patch
+PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/saltstack/salt/pull/
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://saltstack.org/
 COMMENT=	Remote execution and configuration management system
