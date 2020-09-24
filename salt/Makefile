@@ -15,7 +15,7 @@ LICENSE=	apache-2.0
 
 DEPENDS+=	${PYPKGPREFIX}-jinja2-[0-9]*:../../textproc/py-jinja2
 DEPENDS+=	${PYPKGPREFIX}-markupsafe-[0-9]*:../../textproc/py-markupsafe
-DEPENDS+=	${PYPKGPREFIX}-msgpack-[0-9]*:../../devel/py-msgpack
+DEPENDS+=	${PYPKGPREFIX}-msgpack-[0-9]*:../../rb/py-msgpack
 DEPENDS+=	${PYPKGPREFIX}-yaml-[0-9]*:../../textproc/py-yaml
 DEPENDS+=	${PYPKGPREFIX}-requests>=2.5.0:../../devel/py-requests
 DEPENDS+=	${PYPKGPREFIX}-tornado>=4.3:../../www/py-tornado
