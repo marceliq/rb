@@ -10,14 +10,14 @@ HOMEPAGE=	https://www.pycryptodome.org/
 COMMENT=	Cryptographic and hash functions for Python
 LICENSE=	public-domain AND python-software-foundation
 
-EXTRACT_USING=	bsdtar
+#EXTRACT_USING=	bsdtar
 
 # XXX is this needed?
-CFLAGS.SunOS+=	-std=c99 -D_XOPEN_SOURCE=600
+#CFLAGS.SunOS+=	-std=c99 -D_XOPEN_SOURCE=600
 
-CHECK_PORTABILITY_SKIP=	appveyor/get_wheels.sh
+#CHECK_PORTABILITY_SKIP=	appveyor/get_wheels.sh
 
-BUILDLINK_API_DEPENDS.gmp+=	gmp>=5.0
-.include "../../devel/gmp/buildlink3.mk"
+#BUILDLINK_API_DEPENDS.gmp+=	gmp>=5.0
+#.include "../../devel/gmp/buildlink3.mk"
 .include "../../lang/python/egg.mk"
 .include "../../mk/bsd.pkg.mk"
