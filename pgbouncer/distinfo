@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (pgbouncer-1.14.0.tar.gz) = 101147d6718347c4b6e302bbe38ed42447ec82ff
+RMD160 (pgbouncer-1.14.0.tar.gz) = 32af583b75a189fc295fec0880d6af2a6b8d7ce4
+SHA512 (pgbouncer-1.14.0.tar.gz) = 506810c9896a45d67fbc97c3027572278b3857635c222cfaa53b4f3893069cfbee2ec92facd6f387de217bb3170045410b88a7cea09a45686661a2d2ccc85271
+Size (pgbouncer-1.14.0.tar.gz) = 578955 bytes
+SHA1 (patch-Makefile) = 91a59289d4fcd4b8258ed191f2deeb1e24853106
