@@ -7,7 +7,7 @@ POSTGRESQL12_CLIENT_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.postgresql12-client+=	postgresql12-client>=12.0
 BUILDLINK_ABI_DEPENDS.postgresql12-client+=	postgresql12-client>=12.1nb1
-BUILDLINK_PKGSRCDIR.postgresql12-client?=	../../databases/postgresql12-client
+BUILDLINK_PKGSRCDIR.postgresql12-client?=	../../rb/postgresql12-client
 
 # This variable contains the libraries need to link most clients.
 BUILDLINK_LDADD.postgresql12-client=	-lpq ${BUILDLINK_LDADD.gettext}
