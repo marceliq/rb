@@ -1,0 +1,10 @@
+$NetBSD$
+
+SHA1 (pgpool-II-4.1.4.tar.gz) = 7b287d0b76d4df85d3fbdb9d818e91350d50c3a7
+RMD160 (pgpool-II-4.1.4.tar.gz) = 398927d881d7aa43ca94eaf1f7c1519c24cf4d82
+SHA512 (pgpool-II-4.1.4.tar.gz) = 44c06fe8eb98e3c24109fa12f25ff51b6aaf43eb1dd8b1dedb8dd6e40bbe1a544152db3b870a66f71b943e0b7a9e52700f8e45dea78c025dab1d5f84b0ea9909
+Size (pgpool-II-4.1.4.tar.gz) = 4276591 bytes
+SHA1 (patch-configure) = ed04280cf2c02f5491aa20d3478f026a92885f19
+SHA1 (patch-src_include_pool.h) = 74409384d735695d44466468833088959753d9d2
+SHA1 (patch-src_sample_pgpool.conf.sample) = 43f9e481ba3630984c165c609d2aac3d4bbf7c18
+SHA1 (patch-src_watchdog_wd__escalation.c) = 63ac5ea3f8853eb953707e79f351ae1eea3a8b25
