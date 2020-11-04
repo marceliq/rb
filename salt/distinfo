@@ -1,6 +1,7 @@
 $NetBSD$
 
-SHA1 (salt-3001.1.tar.gz) = 45f6d1a5a493e784b5bcbca17b1faf08c6f93cdc
-RMD160 (salt-3001.1.tar.gz) = 858a69307bdfda38c57bbdaf46ee9c3b41adb13a
-SHA512 (salt-3001.1.tar.gz) = d59b6c3580d3379192f36e462385c74b53b0b385e63b3db7734003d0a71df8f88593a59eeccd86b1dc15800e46d050094e7a88f2636673770ddc952d0110ca29
-Size (salt-3001.1.tar.gz) = 14556156 bytes
+SHA1 (salt-2019.2.7.tar.gz) = 8357d2bec039dc1f14e496f42eb327bc6ee475b5
+RMD160 (salt-2019.2.7.tar.gz) = 0c9893d4d761d2233611efef422b3300aa1710b0
+SHA512 (salt-2019.2.7.tar.gz) = e9a0d1ada0172239a31c6a8a628e71367aba072c06fe5420f4b864b9c67da89edd03f95abd46fd9ae414c2262b4e7e5c7f53c606f9f3f58e4c84129f2ed43c9e
+Size (salt-2019.2.7.tar.gz) = 14576515 bytes
+SHA1 (patch-salt_version.py) = 1827dac3609a938fae38ee5dfd2a873c9723dfbd

@@ -1,6 +1,6 @@
 # $NetBSD: Makefile,v 1.71 2019/11/13 14:47:59 adam Exp $
 
-DISTNAME=	salt-2019.2.7
+DISTNAME=	salt-3001.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_PYPI:=s/salt/}
 
@@ -15,17 +15,18 @@ LICENSE=	apache-2.0
 
 DEPENDS+=	${PYPKGPREFIX}-jinja2-[0-9]*:../../textproc/py-jinja2
 DEPENDS+=	${PYPKGPREFIX}-markupsafe-[0-9]*:../../textproc/py-markupsafe
-DEPENDS+=	${PYPKGPREFIX}-msgpack-[0-9]*:../../rb/py-msgpack
+DEPENDS+=	${PYPKGPREFIX}-msgpack-[0-9]*:../../devel/py-msgpack
 DEPENDS+=	${PYPKGPREFIX}-yaml-[0-9]*:../../textproc/py-yaml
 DEPENDS+=	${PYPKGPREFIX}-requests>=2.5.0:../../devel/py-requests
 DEPENDS+=	${PYPKGPREFIX}-tornado>=4.3:../../www/py-tornado
 DEPENDS+=	${PYPKGPREFIX}-psutil-[0-9]*:../../sysutils/py-psutil
+DEPENDS+=	${PYPKGPREFIX}-distro-[0-9]*:../../rb/py-distro
 # zeromq transport requirements
-DEPENDS+=	${PYPKGPREFIX}-cryptodome-[0-9]*:../../security/py-cryptodome
+DEPENDS+=	${PYPKGPREFIX}-cryptodomex-[0-9]*:../../rb/py-cryptodomex
 DEPENDS+=	${PYPKGPREFIX}-zmq>=2.2.0:../../net/py-zmq
 
 # Some modules are still not (as of 2019.2.0) 3.x compatible.
-PYTHON_VERSIONS_ACCEPTED=	27
+#PYTHON_VERSIONS_ACCEPTED=	27
 
 .include "../../lang/python/pyversion.mk"
 .if ${_PYTHON_VERSION} == 27
