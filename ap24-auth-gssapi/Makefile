@@ -1,7 +1,7 @@
 # $NetBSD$
 
 GITHUB_PROJECT=	mod_auth_gssapi
-DISTNAME=	v1.6.1
+DISTNAME=	v1.6.3
 PKGNAME=	${GITHUB_PROJECT}-${DISTNAME}
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GITHUB:=modauthgssapi/}
@@ -18,7 +18,7 @@ PKG_APACHE_ACCEPTED=	apache24
 
 APACHE_MODULE=          yes
 
-WRKSRC=		${WRKDIR}/mod_auth_gssapi-1.6.1
+WRKSRC=		${WRKDIR}/mod_auth_gssapi-1.6.3
 
 GNU_CONFIGURE=  yes
 USE_LIBTOOL=    yes

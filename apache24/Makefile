@@ -1,20 +1,19 @@
-# $NetBSD: Makefile,v 1.89 2020/04/06 08:27:26 wiz Exp $
+# $NetBSD: Makefile,v 1.109 2022/03/15 05:46:54 adam Exp $
 #
 # When updating this package, make sure that no strings like
 # "PR 12345" are in the commit message. Upstream likes
 # to reference their own PRs this way, but this ends up
 # in NetBSD GNATS.
 
-DISTNAME=	httpd-2.4.43
+DISTNAME=	httpd-2.4.53
 PKGNAME=	${DISTNAME:S/httpd/apache/}
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE:=httpd/}
-MASTER_SITES+=	http://archive.apache.org/dist/httpd/
-MASTER_SITES+=	http://archive.eu.apache.org/dist/httpd/
+MASTER_SITES+=	https://archive.apache.org/dist/httpd/
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	ryoon@NetBSD.org
-HOMEPAGE=	http://httpd.apache.org/
+HOMEPAGE=	https://httpd.apache.org/
 COMMENT=	Apache HTTP (Web) server, version 2.4
 LICENSE=	apache-2.0
 
@@ -36,7 +35,7 @@ CONFIGURE_ENV+=		ac_cv_path_RSYNC=/nonexistent
 .include "../../mk/compiler.mk"
 
 CFLAGS.SunOS+=	-D__EXTENSIONS__
-.if !empty(CC_VERSION:Mgcc-[5-9]*) || !empty(PKGSRC_COMPILER:Mclang)
+.if !empty(CC_VERSION:Mgcc-[5-9]*) || !empty(CC_VERSION:Mgcc-1[0-9].*) || !empty(PKGSRC_COMPILER:Mclang)
 CFLAGS.SunOS+=	-D_XOPEN_SOURCE=600
 .else
 CFLAGS.SunOS+=	-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED=1
@@ -46,7 +45,7 @@ BUILDLINK_API_DEPENDS.apr+=	apr>=1.5.0
 .include "../../devel/apr/buildlink3.mk"
 BUILDLINK_API_DEPENDS.apr-util+=	apr-util>=1.5.3
 .include "../../devel/apr-util/buildlink3.mk"
-.include "../../devel/pcre/buildlink3.mk"
+.include "../../devel/pcre2/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"
 .include "../../textproc/expat/buildlink3.mk"
 .include "../../mk/dlopen.buildlink3.mk"
@@ -61,13 +60,13 @@ APACHE_MODULES?=	${DFLT_APACHE_MODULES}
 
 # LDAP support
 PLIST_VARS+=		ldap
-.if !empty(PKG_BUILD_OPTIONS.apr-util:Mldap)
+.if ${PKG_BUILD_OPTIONS.apr-util:Mldap}
 DFLT_APACHE_MODULES+=	ldap authnz_ldap
 PLIST.ldap=		yes
 .endif
 
 PLIST_VARS+=		ssl
-.if !empty(PKG_BUILD_OPTIONS.apr-util:Mssl)
+.if ${PKG_BUILD_OPTIONS.apr-util:Mssl}
 PLIST.ssl=		yes
 .endif
 
@@ -108,7 +107,8 @@ FIX_MAN_PERMS+=		man8/apachectl.8 man1/ab.1 man1/httxt2dbm.1
 SUBST_CLASSES+=		man
 SUBST_STAGE.man=	pre-configure
 SUBST_MESSAGE.man=	Fixing paths in man pages.
-SUBST_FILES.man=	docs/man/*.1 docs/man/*.8
+SUBST_FILES.man=	docs/man/apxs.1 docs/man/htdbm.1 \
+			docs/man/htpasswd.1 docs/man/httpd.8
 SUBST_SED.man=		-e 's,/usr/local/etc/apache,${PKG_SYSCONFDIR},'
 SUBST_SED.man+=		-e 's,/path/to/apache/etc,${PKG_SYSCONFDIR},'
 SUBST_SED.man+=		-e 's,/usr/local/apache2,${PREFIX}/share/httpd/htdocs,'
@@ -150,7 +150,7 @@ SUBST_MESSAGE.abs_srcdir=	Fixing abs_srcdir
 SUBST_FILES.abs_srcdir=		${DESTDIR}${PREFIX}/share/httpd/build/config_vars.mk
 SUBST_SED.abs_srcdir=		-e 's|^\(abs_srcdir =\) .*|\1 ${PREFIX}/share/httpd|'
 
-REPLACE_PERL=		docs/cgi-examples/printenv
+#REPLACE_PERL=		docs/cgi-examples/printenv
 
 .include "../../devel/zlib/buildlink3.mk"
 CONFIGURE_ARGS+=	--with-ssl=${BUILDLINK_PREFIX.openssl}

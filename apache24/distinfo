@@ -1,12 +1,10 @@
 $NetBSD$
 
-SHA1 (httpd-2.4.43.tar.bz2) = fc078df062503ffcf19319c4bf4e8cf27fe30cb4
-RMD160 (httpd-2.4.43.tar.bz2) = 8ccc599b50478330e5505bf75780145d80f4f4ce
-SHA512 (httpd-2.4.43.tar.bz2) = 16cfeecc8f6fab6eca478065a384bdf1872f7ac42206b0bc2bcac6c0d9c576f392c07107201f39e0601dec1bbafcb33d66153544de4d87d79b9a52094d334b64
-Size (httpd-2.4.43.tar.bz2) = 7155865 bytes
+BLAKE2s (httpd-2.4.53.tar.bz2) = 9e94c81d1fdf55e3f0d708a4665a7276f635c2862cd47816c97a24ba9b9cbe75
+SHA512 (httpd-2.4.53.tar.bz2) = 07ef59594251a30a864cc9cc9a58ab788c2d006cef85b728f29533243927c63cb063e0867f2a306f37324c3adb9cf7dcb2402f3516b05c2c6f32469d475dd756
+Size (httpd-2.4.53.tar.bz2) = 7431942 bytes
 SHA1 (patch-aa) = 9a66685f1d2e4710ab464beda98cbaad632aebf9
 SHA1 (patch-ab) = a3edcc20b7654e0446c7d442cda1510b23e5d324
-SHA1 (patch-ac) = 9f86d845df30316d22bce677a4b176f51007ba0d
 SHA1 (patch-ad) = 441c982cf2c93149f345a0f14069511005e0f699
 SHA1 (patch-ae) = 5bd3bf54e792bf8a2916d7e1b49b1702b02c6903
 SHA1 (patch-ag) = 50c7f0fab1cb90ac573f1c47f2d37f9c2a6247e1
@@ -14,4 +12,6 @@ SHA1 (patch-ai) = d3870e46e41adc97c3fce86f9ffd224502ad6b0c
 SHA1 (patch-al) = 02d9ade5aac4270182063d5ad413970c832ee911
 SHA1 (patch-am) = acdf7198ae8b4353cfc70c8015a0f09de036b777
 SHA1 (patch-aw) = 43cd64df886853ef7b75b91ed20183f329fcc9df
+SHA1 (patch-configure) = 7426d8b053cfe89c5e37b0a4591f2eba2a8ca17f
 SHA1 (patch-include_ap__config.h) = 1d056e2d4db80ec97aaf755b6dd6aff69ed2cd96
+SHA1 (patch-modules_filters_mod_substitute.c) = 730af0342b78de04fe51b7dcc3ed057b2b0c3a54

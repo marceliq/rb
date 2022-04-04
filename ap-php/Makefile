@@ -1,7 +1,7 @@
-# $NetBSD: Makefile,v 1.45 2018/12/09 18:52:48 adam Exp $
+# $NetBSD: Makefile,v 1.52 2021/12/08 16:06:53 adam Exp $
 
 PKGNAME=		${APACHE_PKG_PREFIX}-${PHP_PKG_PREFIX}-${PHP_VERSION}
-PKGREVISION=		2
+PKGREVISION=		7
 COMMENT=		Apache (${PKG_APACHE}) module for ${PKG_PHP}
 
 CONFLICTS=		ap-php-[0-9]*
@@ -16,7 +16,7 @@ SSP_SUPPORTED=		no
 .include "../../lang/php/phpversion.mk"
 .include "${PHPPKGSRCDIR}/Makefile.php"
 
-MESSAGE_SUBST+=		PKG_PHP_MAJOR_VERS=${PKG_PHP_MAJOR_VERS}
+#MESSAGE_SUBST+=		PKG_PHP_MAJOR_VERS=${PKG_PHP_MAJOR_VERS}
 
 # Ensure we export symbols in the linked shared object.
 CONFIGURE_ENV+=		EXTRA_LDFLAGS=${EXPORT_SYMBOLS_LDFLAGS:M*:Q}
@@ -29,6 +29,9 @@ do-install:
 			${DESTDIR}${PREFIX}/lib/httpd/mod_php${PKG_PHP_MAJOR_VERS}.so;   \
 	elif [ -f ${WRKSRC}/libs/libphp${PKG_PHP_MAJOR_VERS}.so ]; then	\
 		${INSTALL_DATA} ${WRKSRC}/libs/libphp${PKG_PHP_MAJOR_VERS}.so  \
+			${DESTDIR}${PREFIX}/lib/httpd/mod_php${PKG_PHP_MAJOR_VERS}.so;   \
+	elif [ -f ${WRKSRC}/.libs/libphp.so ]; then \
+		${INSTALL_DATA} ${WRKSRC}/.libs/libphp.so \
 			${DESTDIR}${PREFIX}/lib/httpd/mod_php${PKG_PHP_MAJOR_VERS}.so;   \
 	fi
 

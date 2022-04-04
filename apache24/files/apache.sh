@@ -1,23 +1,22 @@
 #!@RCD_SCRIPTS_SHELL@
 #
-# $NetBSD: apache.sh,v 1.1.1.1 2012/04/13 18:50:49 ryoon Exp $
+# $NetBSD: apache.sh,v 1.2 2021/11/08 00:45:43 khorben Exp $
 #
 # PROVIDE: apache
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
-# You will need to set some variables in /etc/rc.conf to start Apache:
+# You will need to set some variables in @SYSCONFBASE@/rc.conf to start Apache:
 #
 # apache=YES
 
 name="apache"
 
-if [ -f /etc/rc.subr ]
-then
-	. /etc/rc.subr
+if [ -f @SYSCONFBASE@/rc.subr ]; then
+	. @SYSCONFBASE@/rc.subr
 
 	rcvar=$name
-	command="@PREFIX@/sbin/httpd"
+	command="@PREFIX@/bin/httpd"
 	command_args="-k start"
 	pidfile="@VARBASE@/run/httpd.pid"
 	required_files="@PKG_SYSCONFDIR@/httpd.conf"
@@ -27,7 +26,7 @@ then
 	load_rc_config $name
 	run_rc_command "$1"
 else
-	ctl_command="@PREFIX@/sbin/apachectl"
+	ctl_command="@PREFIX@/bin/apachectl"
 
 	if [ ! -x ${ctl_command} ]; then
 		return

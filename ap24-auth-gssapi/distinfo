@@ -1,6 +1,5 @@
 $NetBSD$
 
-SHA1 (mod_auth_gssapi/v1.6.1.tar.gz) = 728aa0d6a3e0f50bb63c15b1c9ff9e1bf5b36f12
-RMD160 (mod_auth_gssapi/v1.6.1.tar.gz) = 45cedf7fc9aa9d01800f024ef6dba0fd4bca367c
-SHA512 (mod_auth_gssapi/v1.6.1.tar.gz) = bf4d512b6f77f8357db18c03b4fc346b34e4565ae98406bf16825cc2650fc0a11cc4c9612320b2f07816b3f7e2970d08bd0e2250f6058d10e4acf52597311bf1
-Size (mod_auth_gssapi/v1.6.1.tar.gz) = 116733 bytes
+BLAKE2s (mod_auth_gssapi/v1.6.3.tar.gz) = a333ee85f068a8165adb12bf2fd59c1f2d588f28a5bffa1df86ee78c977a2f46
+SHA512 (mod_auth_gssapi/v1.6.3.tar.gz) = 433da39376850f9c3232fb442bf1b3b0310d5a60df4eb9942585c9d7403679dc7190b81c6d409504dd4754362ff8abe7fc916054dee148b0180adb319b57f2c6
+Size (mod_auth_gssapi/v1.6.3.tar.gz) = 121840 bytes
