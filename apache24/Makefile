@@ -1,12 +1,13 @@
-# $NetBSD: Makefile,v 1.109 2022/03/15 05:46:54 adam Exp $
+# $NetBSD: Makefile,v 1.112 2022/06/28 11:37:02 wiz Exp $
 #
 # When updating this package, make sure that no strings like
 # "PR 12345" are in the commit message. Upstream likes
 # to reference their own PRs this way, but this ends up
 # in NetBSD GNATS.
 
-DISTNAME=	httpd-2.4.53
+DISTNAME=	httpd-2.4.54
 PKGNAME=	${DISTNAME:S/httpd/apache/}
+PKGREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE:=httpd/}
 MASTER_SITES+=	https://archive.apache.org/dist/httpd/
@@ -193,9 +194,9 @@ post-install:
 	${CHOWN} ${MANOWN}:${MANGRP} ${DESTDIR}${PREFIX}/${PKGMANDIR}/${file}
 .endfor
 
-	${CHMOD} -x ${DESTDIR}${PREFIX}/bin/envvars-std
+	${CHMOD} a-x ${DESTDIR}${PREFIX}/bin/envvars-std
 .if exists(${DESTDIR}${PREFIX}/bin/suexec)
-	${CHMOD} -w ${DESTDIR}${PREFIX}/bin/suexec
+	${CHMOD} a-w ${DESTDIR}${PREFIX}/bin/suexec
 .endif
 
 .include "../../mk/pthread.buildlink3.mk"
