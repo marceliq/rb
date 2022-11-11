@@ -18,7 +18,7 @@ IBM_MQC_REDIST_BUILDLINK3_MK:=
 BUILDLINK_LIBDIRS.ibm-mqc-redist+=         ibm-mqc-redist/lib64
 BUILDLINK_RPATHDIRS.ibm-mqc-redist+=       ibm-mqc-redist/lib64
 
-BUILDLINK_API_DEPENDS.ibm-mqc-redist+=	ibm-mqc-redist>=9.1.4.0
+BUILDLINK_API_DEPENDS.ibm-mqc-redist+=	ibm-mqc-redist>=9.3.1.0
 BUILDLINK_PKGSRCDIR.ibm-mqc-redist?=	../../rb/ibm-mqc-redist
 .endif	# IBM_MQC_REDIST_BUILDLINK3_MK
 
