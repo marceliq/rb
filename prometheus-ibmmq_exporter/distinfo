@@ -1,6 +1,5 @@
 $NetBSD$
 
-SHA1 (mq-metric-samples/v5.2.2.tar.gz) = f19b1a85b0672968e8d25b9642ff8489ba394e48
-RMD160 (mq-metric-samples/v5.2.2.tar.gz) = 432e9c2242aaac913437504aadfa9a2f599bf6d0
-SHA512 (mq-metric-samples/v5.2.2.tar.gz) = 7697601b6efb8d51b9e806c17bf9fd4ef784fd3d699f1d9ae3ab639bb630afbfbe7f97762149ddcac9519555baafb3d51f388fba8c5740040ab4db8af51f59e4
-Size (mq-metric-samples/v5.2.2.tar.gz) = 2477455 bytes
+BLAKE2s (mq-metric-samples/v5.3.2.tar.gz) = 46a6c4b34c220d1339c61a837738ef4ceb967b5295e6002ae7d09f50b6e09427
+SHA512 (mq-metric-samples/v5.3.2.tar.gz) = c24970fcaea49ed8355cbfce1b1ad34e088a9f3b6814e7d4c2c50db741fb89b0d8aa57034ef8d63b914ed4a8319c91c04b6cffc5a649a50f0b31d8e679a05ce4
+Size (mq-metric-samples/v5.3.2.tar.gz) = 4122050 bytes
