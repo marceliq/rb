@@ -16,7 +16,7 @@ if [ -f @SYSCONFBASE@/rc.subr ]; then
 	. @SYSCONFBASE@/rc.subr
 
 	rcvar=$name
-	command="@PREFIX@/sbin/httpd"
+	command="@PREFIX@/bin/httpd"
 	command_args="-k start"
 	pidfile="@VARBASE@/run/httpd.pid"
 	required_files="@PKG_SYSCONFDIR@/httpd.conf"
@@ -26,7 +26,7 @@ if [ -f @SYSCONFBASE@/rc.subr ]; then
 	load_rc_config $name
 	run_rc_command "$1"
 else
-	ctl_command="@PREFIX@/sbin/apachectl"
+	ctl_command="@PREFIX@/bin/apachectl"
 
 	if [ ! -x ${ctl_command} ]; then
 		return
