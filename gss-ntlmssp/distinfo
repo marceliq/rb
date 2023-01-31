@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (gss-ntlmssp/gssntlmssp-1.1.0.tar.gz) = e33a661a2cb2af402b88c02dff642dcf235e6d2dd06f2bf4a3f75ce51b922836
+SHA512 (gss-ntlmssp/gssntlmssp-1.1.0.tar.gz) = 6bd8ae5756a798ac3edb3fd43e890179b12bdc5ad81707085cc9ef7a8a330d65576a48491fc3ef809c0556158079d4abf3849007802ed1fbe6e85cf6e37fd90c
+Size (gss-ntlmssp/gssntlmssp-1.1.0.tar.gz) = 459211 bytes

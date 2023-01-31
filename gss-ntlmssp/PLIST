@@ -1,0 +1,5 @@
+@comment $NetBSD$
+include/gssapi/gssapi_ntlmssp.h
+lib/gssntlmssp/gssntlmssp.la
+share/locale/en_GB/LC_MESSAGES/gssntlmssp.mo
+share/locale/ko/LC_MESSAGES/gssntlmssp.mo

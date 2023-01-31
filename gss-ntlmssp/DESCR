@@ -1,0 +1,2 @@
+This is a mechglue plugin for the GSSAPI library
+that implements NTLM authentication.

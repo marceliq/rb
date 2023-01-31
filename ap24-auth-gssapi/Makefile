@@ -16,15 +16,18 @@ LICENSE=	apache-2.0
 
 PKG_APACHE_ACCEPTED=	apache24
 
-APACHE_MODULE=          yes
+APACHE_MODULE=		yes
 
 WRKSRC=		${WRKDIR}/mod_auth_gssapi-1.6.5
 
-GNU_CONFIGURE=  yes
-USE_LIBTOOL=    yes
-USE_TOOLS+=     gmake
-USE_TOOLS+=     automake
-USE_TOOLS+=     pkg-config
+GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+USE_TOOLS+=	gmake
+USE_TOOLS+=	automake
+USE_TOOLS+=	autoreconf
+USE_TOOLS+=	pkg-config
+
+CHECK_PORTABILITY_SKIP=	configure
 
 APACHE_MODULE_SRCDIR=	${WRKSRC}/src
 APACHE_MODULE_NAME=	mod_auth_gssapi.so
@@ -53,4 +56,5 @@ do-install:
 .include "../../rb/mk/apache.mk"
 .include "../../security/openssl/buildlink3.mk"
 .include "../../security/mit-krb5/buildlink3.mk"
+.include "../../rb/gss-ntlmssp/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
