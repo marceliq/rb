@@ -1,15 +1,15 @@
-# $NetBSD: Makefile,v 1.115 2023/01/20 14:03:16 adam Exp $
+# $NetBSD: Makefile,v 1.119 2023/04/21 00:34:01 manu Exp $
 #
 # When updating this package, make sure that no strings like
 # "PR 12345" are in the commit message. Upstream likes
 # to reference their own PRs this way, but this ends up
 # in NetBSD GNATS.
 
-DISTNAME=	httpd-2.4.55
+DISTNAME=	httpd-2.4.57
 PKGNAME=	${DISTNAME:S/httpd/apache/}
+PKGREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE:=httpd/}
-MASTER_SITES+=	https://archive.apache.org/dist/httpd/
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	ryoon@NetBSD.org
@@ -35,7 +35,7 @@ CONFIGURE_ENV+=		ac_cv_path_RSYNC=/nonexistent
 .include "../../mk/compiler.mk"
 
 CFLAGS.SunOS+=	-D__EXTENSIONS__
-.if !empty(CC_VERSION:Mgcc-[5-9]*) || !empty(CC_VERSION:Mgcc-1[0-9].*) || !empty(PKGSRC_COMPILER:Mclang)
+.if ${CC_VERSION:Mgcc-[5-9]*} || ${CC_VERSION:Mgcc-1[0-9].*} || !empty(PKGSRC_COMPILER:Mclang)
 CFLAGS.SunOS+=	-D_XOPEN_SOURCE=600
 .else
 CFLAGS.SunOS+=	-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED=1
@@ -70,8 +70,6 @@ PLIST_VARS+=		ssl
 PLIST.ssl=		yes
 .endif
 
-APACHE_USER?=		www
-APACHE_GROUP?=		www
 PKG_GROUPS=		${APACHE_GROUP}
 PKG_USERS=		${APACHE_USER}:${APACHE_GROUP}
 PKG_GROUPS_VARS=	APACHE_GROUP
