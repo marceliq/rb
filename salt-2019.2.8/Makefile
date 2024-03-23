@@ -1,25 +1,37 @@
-# $NetBSD: Makefile,v 1.84 2024/02/02 20:17:24 adam Exp $
+# $NetBSD: Makefile,v 1.71 2019/11/13 14:47:59 adam Exp $
 
-.include "Makefile.common"
+DISTNAME=	salt-2019.2.8
+CATEGORIES=	sysutils
+MASTER_SITES=	${MASTER_SITE_PYPI:=s/salt/}
 
+#PATCHFILES=	57090.patch
+#PATCH_SITES=	https://patch-diff.githubusercontent.com/raw/saltstack/salt/pull/
+#PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	http://saltstack.org/
 COMMENT=	Remote execution and configuration management system
+LICENSE=	apache-2.0
 
-DEPENDS+=	${PYPKGPREFIX}-cryptodomex>=3.9.8:../../rb/py-cryptodomex
-DEPENDS+=	${PYPKGPREFIX}-distro>=1.0.1:../../devel/py-distro
 DEPENDS+=	${PYPKGPREFIX}-jinja2-[0-9]*:../../textproc/py-jinja2
-DEPENDS+=	${PYPKGPREFIX}-jmespath-[0-9]*:../../textproc/py-jmespath
-DEPENDS+=	${PYPKGPREFIX}-looseversion-[0-9]*:../../devel/py-looseversion
 DEPENDS+=	${PYPKGPREFIX}-markupsafe-[0-9]*:../../textproc/py-markupsafe
-DEPENDS+=	${PYPKGPREFIX}-msgpack>=0.5.6:../../devel/py-msgpack
-DEPENDS+=	${PYPKGPREFIX}-packaging>=21.3:../../devel/py-packaging
-DEPENDS+=	${PYPKGPREFIX}-psutil>=5.0.0:../../sysutils/py-psutil
-DEPENDS+=	${PYPKGPREFIX}-requests>=2.5.0:../../devel/py-requests
+DEPENDS+=	${PYPKGPREFIX}-msgpack-[0-9]*:../../rb/py-msgpack
 DEPENDS+=	${PYPKGPREFIX}-yaml-[0-9]*:../../textproc/py-yaml
-DEPENDS+=	${PYPKGPREFIX}-zmq>=20.0.0:../../net/py-zmq
+DEPENDS+=	${PYPKGPREFIX}-requests>=2.5.0:../../devel/py-requests
+DEPENDS+=	${PYPKGPREFIX}-tornado>=4.3:../../www/py-tornado
+DEPENDS+=	${PYPKGPREFIX}-psutil-[0-9]*:../../sysutils/py-psutil
+# DEPENDS+=	${PYPKGPREFIX}-distro-[0-9]*:../../devel/py-distro
+# zeromq transport requirements
+DEPENDS+=	${PYPKGPREFIX}-cryptodome-[0-9]*:../../security/py-cryptodome
+DEPENDS+=	${PYPKGPREFIX}-zmq>=2.2.0:../../net/py-zmq
 
-USE_PKG_RESOURCES=	yes
+# Some modules are still not (as of 2019.2.0) 3.x compatible.
+PYTHON_VERSIONS_ACCEPTED=	27
 
-PYTHON_VERSIONS_INCOMPATIBLE=	27
+.include "../../lang/python/pyversion.mk"
+.if ${_PYTHON_VERSION} == 27
+DEPENDS+= ${PYPKGPREFIX}-futures-[0-9]*:../../devel/py-futures
+.endif
 
 BUILD_DEFS+=	VARBASE
 
@@ -67,17 +79,14 @@ SUBST_SED.fix-path+=	-e 's,/opt/local/etc,${PKG_SYSCONFBASEDIR},g'
 SUBST_SED.fix-path+=	-e 's,/var/run,${VARBASE}/run,g'
 SUBST_SED.fix-path+=	-e 's,/var/cache,${VARBASE}/cache,g'
 SUBST_SED.fix-path+=	-e 's,/var/log,${VARBASE}/log,g'
-SUBST_NOOP_OK.fix-path=	yes
 
 # Contains hardcoded paths to find installed libraries.
 CHECK_WRKREF_SKIP+=	*/salt/utils/rsax931.py
-CHECK_WRKREF_SKIP+=	*/smartos.*
-
-CHECK_PORTABILITY_SKIP+=	pkg/*/* pkg/*/*/*
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/master ${DESTDIR}${EGDIR}/
 	${INSTALL_DATA} ${WRKSRC}/conf/minion ${DESTDIR}${EGDIR}/
 
-.include "../../lang/python/egg.mk"
+.include "../../lang/python/distutils.mk"
 .include "../../mk/bsd.pkg.mk"
+
