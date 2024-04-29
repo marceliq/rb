@@ -1,10 +1,11 @@
-$NetBSD: patch-modules_filters_mod_substitute.c,v 1.2 2023/10/19 14:22:02 wiz Exp $
+$NetBSD: patch-modules_filters_mod_substitute.c,v 1.1 2020/05/04 12:26:37 manu Exp $
 
 expr= support in RHS, from upstream trunk
 
---- modules/filters/mod_substitute.c.orig	2021-04-18 19:11:48.000000000 +0000
-+++ modules/filters/mod_substitute.c
-@@ -30,6 +30,7 @@
+--- ./modules/filters/mod_substitute.c.orig
++++ ./modules/filters/mod_substitute.c
+@@ -29,8 +29,9 @@
+ #include "util_filter.h"
  #include "util_varbuf.h"
  #include "apr_buckets.h"
  #include "http_request.h"
@@ -12,7 +13,9 @@ expr= support in RHS, from upstream trunk
  #define APR_WANT_STRFUNC
  #include "apr_want.h"
  
-@@ -52,6 +53,7 @@ typedef struct subst_pattern_t {
+ /*
+@@ -51,8 +52,9 @@
+     apr_size_t replen;
      apr_size_t patlen;
      int flatten;
      const char *from;
@@ -20,7 +23,9 @@ expr= support in RHS, from upstream trunk
  } subst_pattern_t;
  
  typedef struct {
-@@ -69,6 +71,11 @@ typedef struct {
+     apr_array_header_t *patterns;
+@@ -68,8 +70,13 @@
+     apr_bucket_brigade *pattbb;
      apr_pool_t *tpool;
  } substitute_module_ctx;
  
@@ -32,7 +37,9 @@ expr= support in RHS, from upstream trunk
  static void *create_substitute_dcfg(apr_pool_t *p, char *d)
  {
      subst_dir_conf *dcfg =
-@@ -97,7 +104,7 @@ static void *merge_substitute_dcfg(apr_p
+         (subst_dir_conf *) apr_palloc(p, sizeof(subst_dir_conf));
+@@ -96,9 +103,9 @@
+      * was to apply inherited subst patterns after locally scoped patterns.
       * In later 2.2 and 2.4 versions, SubstituteInheritBefore may be toggled
       * 'on' to follow the corrected/expected behavior, without violating POLS.
       */
@@ -41,7 +48,9 @@ expr= support in RHS, from upstream trunk
          a->patterns = apr_array_append(p, base->patterns,
                                            over->patterns);
      }
-@@ -137,11 +144,14 @@ static apr_status_t do_pattmatch(ap_filt
+     else {
+@@ -136,13 +143,16 @@
+     const char *buff;
      struct ap_varbuf vb;
      apr_bucket *b;
      apr_bucket *tmp_b;
@@ -57,7 +66,9 @@ expr= support in RHS, from upstream trunk
  
      APR_BRIGADE_INSERT_TAIL(mybb, inb);
      ap_varbuf_init(pool, &vb, 0);
-@@ -155,6 +165,16 @@ static apr_status_t do_pattmatch(ap_filt
+ 
+@@ -154,8 +164,18 @@
+     if (cfg->patterns->nelts == 1) {
         force_quick = 1;
      }
      for (i = 0; i < cfg->patterns->nelts; i++) {
@@ -74,7 +85,9 @@ expr= support in RHS, from upstream trunk
          for (b = APR_BRIGADE_FIRST(mybb);
               b != APR_BRIGADE_SENTINEL(mybb);
               b = APR_BUCKET_NEXT(b)) {
-@@ -187,12 +207,26 @@ static apr_status_t do_pattmatch(ap_filt
+             if (APR_BUCKET_IS_METADATA(b)) {
+@@ -186,14 +206,28 @@
+                      * space_left counts how many bytes we have left until the
                       * line length reaches max_line_length.
                       */
                      apr_size_t space_left = cfg->max_line_length;
@@ -103,7 +116,9 @@ expr= support in RHS, from upstream trunk
                          have_match = 1;
                          /* get offset into buff for pattern */
                          len = (apr_size_t) (repl - buff);
-@@ -205,10 +239,10 @@ static apr_status_t do_pattmatch(ap_filt
+                         if (script->flatten && !force_quick) {
+@@ -204,23 +238,23 @@
+                              * contain and use them. This is slow, since we
                               * are constanting allocing space and copying
                               * strings.
                               */
@@ -116,7 +131,8 @@ expr= support in RHS, from upstream trunk
                          }
                          else {
                              /*
-@@ -217,9 +251,9 @@ static apr_status_t do_pattmatch(ap_filt
+                              * The string before the match but after the
+                              * previous match (if any) has length 'len'.
                               * Check if we still have space for this string and
                               * the replacement string.
                               */
@@ -128,7 +144,9 @@ expr= support in RHS, from upstream trunk
                              /*
                               * We now split off the string before the match
                               * as its own bucket, then isolate the matched
-@@ -230,8 +264,8 @@ static apr_status_t do_pattmatch(ap_filt
+                              * string and delete it.
+@@ -229,10 +263,10 @@
+                             /*
                               * Finally, we create a bucket that contains the
                               * replacement...
                               */
@@ -139,7 +157,9 @@ expr= support in RHS, from upstream trunk
                                        f->r->connection->bucket_alloc);
                              /* ... and insert it */
                              APR_BUCKET_INSERT_BEFORE(b, tmp_b);
-@@ -282,6 +316,20 @@ static apr_status_t do_pattmatch(ap_filt
+                         }
+@@ -281,8 +315,22 @@
+                     apr_size_t space_left = cfg->max_line_length;
                      while (!ap_regexec_len(script->regexp, pos, left,
                                         AP_MAX_REG_MATCH, regm, 0)) {
                          apr_status_t rv;
@@ -160,7 +180,9 @@ expr= support in RHS, from upstream trunk
                          ap_log_rerror(APLOG_MARK, APLOG_TRACE8, 0, f->r,
                                        "Matching found");
                          have_match = 1;
-@@ -296,7 +344,7 @@ static apr_status_t do_pattmatch(ap_filt
+                         if (script->flatten && !force_quick) {
+@@ -295,9 +343,9 @@
+                             /* copy bytes before the match */
                              if (regm[0].rm_so > 0)
                                  ap_varbuf_strmemcat(&vb, pos, regm[0].rm_so);
                              /* add replacement string, last argument is unsigned! */
@@ -169,7 +191,9 @@ expr= support in RHS, from upstream trunk
                                                    AP_MAX_REG_MATCH, regm,
                                                    cfg->max_line_length - vb.strlen);
                              if (rv != APR_SUCCESS)
-@@ -311,7 +359,7 @@ static apr_status_t do_pattmatch(ap_filt
+                                 return rv;
+@@ -310,9 +358,9 @@
+                             if (space_left <= regm[0].rm_so)
                                  return APR_ENOMEM;
                              space_left -= regm[0].rm_so;
                              rv = ap_pregsub_ex(pool, &repl,
@@ -178,7 +202,9 @@ expr= support in RHS, from upstream trunk
                                                 AP_MAX_REG_MATCH, regm,
                                                 space_left);
                              if (rv != APR_SUCCESS)
-@@ -464,6 +512,7 @@ static apr_status_t substitute_filter(ap
+                                 return rv;
+@@ -462,8 +510,9 @@
+                 apr_brigade_cleanup(ctx->linebb);
              }
              APR_BUCKET_REMOVE(b);
              APR_BRIGADE_INSERT_TAIL(ctx->passbb, b);
@@ -186,7 +212,9 @@ expr= support in RHS, from upstream trunk
          }
          /*
           * No need to handle FLUSH buckets separately as we call
-@@ -694,6 +743,18 @@ static const char *set_pattern(cmd_parms
+          * ap_pass_brigade anyway at the end of the loop.
+@@ -690,8 +739,20 @@
+     }
  
      nscript->replacement = to;
      nscript->replen = strlen(to);
@@ -205,3 +233,4 @@ expr= support in RHS, from upstream trunk
      nscript->flatten = flatten;
  
      return NULL;
+ }

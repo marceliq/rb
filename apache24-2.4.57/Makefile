@@ -1,12 +1,13 @@
-# $NetBSD: Makefile,v 1.124 2024/04/05 09:31:38 adam Exp $
+# $NetBSD: Makefile,v 1.119 2023/04/21 00:34:01 manu Exp $
 #
 # When updating this package, make sure that no strings like
 # "PR 12345" are in the commit message. Upstream likes
 # to reference their own PRs this way, but this ends up
 # in NetBSD GNATS.
 
-DISTNAME=	httpd-2.4.59
+DISTNAME=	httpd-2.4.57
 PKGNAME=	${DISTNAME:S/httpd/apache/}
+PKGREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE:=httpd/}
 EXTRACT_SUFX=	.tar.bz2
@@ -38,13 +39,6 @@ CFLAGS.SunOS+=	-D__EXTENSIONS__
 CFLAGS.SunOS+=	-D_XOPEN_SOURCE=600
 .else
 CFLAGS.SunOS+=	-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED=1
-.endif
-
-.include "../../mk/bsd.prefs.mk"
-
-.if ${OPSYS} == "Darwin" && ${OPSYS_VERSION} < 101300
-# Apparently Xcode 8 and later add support for thread_local.
-CPPFLAGS+=	-DAP_NO_THREAD_LOCAL=1
 .endif
 
 BUILDLINK_API_DEPENDS.apr+=	apr>=1.5.0
