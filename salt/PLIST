@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.32 2024/01/22 16:35:25 adam Exp $
+@comment $NetBSD$
 bin/salt
 bin/salt-api
 bin/salt-call
@@ -987,18 +987,6 @@ ${PYSITELIB}/salt/loader/dunder.pyo
 ${PYSITELIB}/salt/loader/lazy.py
 ${PYSITELIB}/salt/loader/lazy.pyc
 ${PYSITELIB}/salt/loader/lazy.pyo
-${PYSITELIB}/salt/log/__init__.py
-${PYSITELIB}/salt/log/__init__.pyc
-${PYSITELIB}/salt/log/__init__.pyo
-${PYSITELIB}/salt/log/handlers/__init__.py
-${PYSITELIB}/salt/log/handlers/__init__.pyc
-${PYSITELIB}/salt/log/handlers/__init__.pyo
-${PYSITELIB}/salt/log/mixins.py
-${PYSITELIB}/salt/log/mixins.pyc
-${PYSITELIB}/salt/log/mixins.pyo
-${PYSITELIB}/salt/log/setup.py
-${PYSITELIB}/salt/log/setup.pyc
-${PYSITELIB}/salt/log/setup.pyo
 ${PYSITELIB}/salt/log_handlers/__init__.py
 ${PYSITELIB}/salt/log_handlers/__init__.pyc
 ${PYSITELIB}/salt/log_handlers/__init__.pyo
@@ -1296,9 +1284,6 @@ ${PYSITELIB}/salt/modules/capirca_acl.pyo
 ${PYSITELIB}/salt/modules/cassandra_cql.py
 ${PYSITELIB}/salt/modules/cassandra_cql.pyc
 ${PYSITELIB}/salt/modules/cassandra_cql.pyo
-${PYSITELIB}/salt/modules/cassandra_mod.py
-${PYSITELIB}/salt/modules/cassandra_mod.pyc
-${PYSITELIB}/salt/modules/cassandra_mod.pyo
 ${PYSITELIB}/salt/modules/celery.py
 ${PYSITELIB}/salt/modules/celery.pyc
 ${PYSITELIB}/salt/modules/celery.pyo
@@ -3111,18 +3096,12 @@ ${PYSITELIB}/salt/returners/carbon_return.pyo
 ${PYSITELIB}/salt/returners/cassandra_cql_return.py
 ${PYSITELIB}/salt/returners/cassandra_cql_return.pyc
 ${PYSITELIB}/salt/returners/cassandra_cql_return.pyo
-${PYSITELIB}/salt/returners/cassandra_return.py
-${PYSITELIB}/salt/returners/cassandra_return.pyc
-${PYSITELIB}/salt/returners/cassandra_return.pyo
 ${PYSITELIB}/salt/returners/couchbase_return.py
 ${PYSITELIB}/salt/returners/couchbase_return.pyc
 ${PYSITELIB}/salt/returners/couchbase_return.pyo
 ${PYSITELIB}/salt/returners/couchdb_return.py
 ${PYSITELIB}/salt/returners/couchdb_return.pyc
 ${PYSITELIB}/salt/returners/couchdb_return.pyo
-${PYSITELIB}/salt/returners/django_return.py
-${PYSITELIB}/salt/returners/django_return.pyc
-${PYSITELIB}/salt/returners/django_return.pyo
 ${PYSITELIB}/salt/returners/elasticsearch_return.py
 ${PYSITELIB}/salt/returners/elasticsearch_return.pyc
 ${PYSITELIB}/salt/returners/elasticsearch_return.pyo

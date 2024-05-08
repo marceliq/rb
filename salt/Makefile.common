@@ -2,7 +2,7 @@
 # used by sysutils/salt/Makefile
 # used by sysutils/salt-docs/Makefile
 
-DISTNAME=	salt-3006.7
+DISTNAME=	salt-3006.8
 CATEGORIES=	sysutils python
 MASTER_SITES=	${MASTER_SITE_PYPI:=s/salt/}
 
@@ -10,7 +10,7 @@ MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	https://saltproject.io/
 LICENSE=	apache-2.0
 
-DISTINFO_FILE=	${.CURDIR}/../../sysutils/salt/distinfo
-PATCHDIR=	${.CURDIR}/../../sysutils/salt/patches
+DISTINFO_FILE=	${.CURDIR}/../../rb/salt/distinfo
+PATCHDIR=	${.CURDIR}/../../rb/salt/patches
 
 USE_LANGUAGES=	# none
