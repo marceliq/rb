@@ -1,14 +1,14 @@
 # $NetBSD$
 
 GITHUB_PROJECT=	mq-metric-samples
-GITHUB_TAG=	v5.3.2
-DISTNAME=	v5.3.2
+GITHUB_TAG=	v5.5.4.1
+DISTNAME=	v5.5.4.1
 PKGNAME=	${GITHUB_PROJECT}-${DISTNAME:S,^v,,}
 CATEGORIES=	rb
 MASTER_SITES=	${MASTER_SITE_GITHUB:=ibm-messaging/}
 DIST_SUBDIR=	${GITHUB_PROJECT}
 
-MAINTAINER=	mhnilka@gmail.cz
+MAINTAINER=	mhnilka@gmail.com
 HOMEPAGE=	https://github.com/ibm-messaging/mq-metric-samples/
 COMMENT=	IBM MQ exporter for Prometheus
 #LICENSE=	# TODO: (see mk/license.mk)

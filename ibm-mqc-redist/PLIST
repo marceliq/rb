@@ -9,9 +9,11 @@ ibm-mqc-redist/bin/crtmqenv
 ibm-mqc-redist/bin/dmpmqcfg
 ibm-mqc-redist/bin/dmpmqmsg
 ibm-mqc-redist/bin/dspmqlic
+ibm-mqc-redist/bin/dspmqrte
 ibm-mqc-redist/bin/dspmqtrc
 ibm-mqc-redist/bin/dspmqver
 ibm-mqc-redist/bin/endmqtrc
+ibm-mqc-redist/bin/ffstsummary
 ibm-mqc-redist/bin/isa.xml
 ibm-mqc-redist/bin/mqconfig
 ibm-mqc-redist/bin/mqinstconf
@@ -2010,9 +2012,9 @@ ibm-mqc-redist/licenses/non_ibm_license.txt
 ibm-mqc-redist/licenses/notices.txt
 ibm-mqc-redist/msg/en_US/amq.cat
 ibm-mqc-redist/samp/ccsid_part2.tbl
-ibm-mqc-redist/swidtag/IBM_MQ-9.3.1.mqtag
+ibm-mqc-redist/swidtag/IBM_MQ-9.3.5.mqtag
 ibm-mqc-redist/swidtag/IBM_MQ_GSKit-8.0.55.mqtag
-ibm-mqc-redist/swidtag/IBM_MQ_Redistributable_Client-9.3.1.mqtag
-ibm-mqc-redist/swidtag/IBM_MQ_Runtime-9.3.1.mqtag
-ibm-mqc-redist/swidtag/IBM_MQ_SDK-9.3.1.mqtag
-ibm-mqc-redist/swidtag/ibm.com_IBM_MQ_Client-9.3.1.swidtag
+ibm-mqc-redist/swidtag/IBM_MQ_Redistributable_Client-9.3.5.mqtag
+ibm-mqc-redist/swidtag/IBM_MQ_Runtime-9.3.5.mqtag
+ibm-mqc-redist/swidtag/IBM_MQ_SDK-9.3.5.mqtag
+ibm-mqc-redist/swidtag/ibm.com_IBM_MQ_Client-9.3.5.swidtag
