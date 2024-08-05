@@ -2,7 +2,7 @@
 # used by sysutils/salt/Makefile
 # used by sysutils/salt-docs/Makefile
 
-DISTNAME=	salt-3006.9
+DISTNAME=	salt-3006.8
 CATEGORIES=	sysutils python
 MASTER_SITES=	${MASTER_SITE_PYPI:=s/salt/}
 

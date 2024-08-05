@@ -282,15 +282,9 @@ ${PYSITELIB}/salt/client/ssh/wrapper/config.pyo
 ${PYSITELIB}/salt/client/ssh/wrapper/cp.py
 ${PYSITELIB}/salt/client/ssh/wrapper/cp.pyc
 ${PYSITELIB}/salt/client/ssh/wrapper/cp.pyo
-${PYSITELIB}/salt/client/ssh/wrapper/defaults.py
-${PYSITELIB}/salt/client/ssh/wrapper/defaults.pyc
-${PYSITELIB}/salt/client/ssh/wrapper/defaults.pyo
 ${PYSITELIB}/salt/client/ssh/wrapper/grains.py
 ${PYSITELIB}/salt/client/ssh/wrapper/grains.pyc
 ${PYSITELIB}/salt/client/ssh/wrapper/grains.pyo
-${PYSITELIB}/salt/client/ssh/wrapper/logmod.py
-${PYSITELIB}/salt/client/ssh/wrapper/logmod.pyc
-${PYSITELIB}/salt/client/ssh/wrapper/logmod.pyo
 ${PYSITELIB}/salt/client/ssh/wrapper/mine.py
 ${PYSITELIB}/salt/client/ssh/wrapper/mine.pyc
 ${PYSITELIB}/salt/client/ssh/wrapper/mine.pyo
@@ -303,9 +297,6 @@ ${PYSITELIB}/salt/client/ssh/wrapper/publish.pyo
 ${PYSITELIB}/salt/client/ssh/wrapper/saltcheck.py
 ${PYSITELIB}/salt/client/ssh/wrapper/saltcheck.pyc
 ${PYSITELIB}/salt/client/ssh/wrapper/saltcheck.pyo
-${PYSITELIB}/salt/client/ssh/wrapper/slsutil.py
-${PYSITELIB}/salt/client/ssh/wrapper/slsutil.pyc
-${PYSITELIB}/salt/client/ssh/wrapper/slsutil.pyo
 ${PYSITELIB}/salt/client/ssh/wrapper/state.py
 ${PYSITELIB}/salt/client/ssh/wrapper/state.pyc
 ${PYSITELIB}/salt/client/ssh/wrapper/state.pyo
@@ -5185,9 +5176,6 @@ ${PYSITELIB}/salt/utils/win_osinfo.pyo
 ${PYSITELIB}/salt/utils/win_pdh.py
 ${PYSITELIB}/salt/utils/win_pdh.pyc
 ${PYSITELIB}/salt/utils/win_pdh.pyo
-${PYSITELIB}/salt/utils/win_pwsh.py
-${PYSITELIB}/salt/utils/win_pwsh.pyc
-${PYSITELIB}/salt/utils/win_pwsh.pyo
 ${PYSITELIB}/salt/utils/win_reg.py
 ${PYSITELIB}/salt/utils/win_reg.pyc
 ${PYSITELIB}/salt/utils/win_reg.pyo
