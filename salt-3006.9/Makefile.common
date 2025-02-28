@@ -1,0 +1,16 @@
+# $NetBSD: Makefile.common,v 1.4 2024/03/06 19:11:53 adam Exp $
+# used by sysutils/salt/Makefile
+# used by sysutils/salt-docs/Makefile
+
+DISTNAME=	salt-3006.9
+CATEGORIES=	sysutils python
+MASTER_SITES=	${MASTER_SITE_PYPI:=s/salt/}
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	https://saltproject.io/
+LICENSE=	apache-2.0
+
+DISTINFO_FILE=	${.CURDIR}/../../rb/salt/distinfo
+PATCHDIR=	${.CURDIR}/../../rb/salt/patches
+
+USE_LANGUAGES=	# none

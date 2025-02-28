@@ -1,11 +1,25 @@
-# $NetBSD: Makefile,v 1.87 2024/12/26 22:16:45 adam Exp $
+# $NetBSD: Makefile,v 1.84 2024/02/02 20:17:24 adam Exp $
 
 .include "Makefile.common"
 
 COMMENT=	Remote execution and configuration management system
 
-TOOL_DEPENDS+=	${PYPKGPREFIX}-setuptools-[0-9]*:../../devel/py-setuptools
-TOOL_DEPENDS+=	${PYPKGPREFIX}-wheel-[0-9]*:../../devel/py-wheel
+DEPENDS+=	${PYPKGPREFIX}-cryptodomex>=3.9.8:../../rb/py-cryptodomex
+DEPENDS+=	${PYPKGPREFIX}-distro>=1.0.1:../../devel/py-distro
+DEPENDS+=	${PYPKGPREFIX}-jinja2-[0-9]*:../../textproc/py-jinja2
+DEPENDS+=	${PYPKGPREFIX}-jmespath-[0-9]*:../../textproc/py-jmespath
+DEPENDS+=	${PYPKGPREFIX}-looseversion-[0-9]*:../../devel/py-looseversion
+DEPENDS+=	${PYPKGPREFIX}-markupsafe-[0-9]*:../../textproc/py-markupsafe
+DEPENDS+=	${PYPKGPREFIX}-msgpack>=0.5.6:../../devel/py-msgpack
+DEPENDS+=	${PYPKGPREFIX}-packaging>=21.3:../../devel/py-packaging
+DEPENDS+=	${PYPKGPREFIX}-psutil>=5.0.0:../../sysutils/py-psutil
+DEPENDS+=	${PYPKGPREFIX}-requests>=2.5.0:../../devel/py-requests
+DEPENDS+=	${PYPKGPREFIX}-yaml-[0-9]*:../../textproc/py-yaml
+DEPENDS+=	${PYPKGPREFIX}-zmq>=20.0.0:../../net/py-zmq
+
+USE_PKG_RESOURCES=	yes
+USE_LANGUAGES=	c
+PYTHON_VERSIONS_INCOMPATIBLE=	27
 
 BUILD_DEFS+=	VARBASE
 
@@ -65,5 +79,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/master ${DESTDIR}${EGDIR}/
 	${INSTALL_DATA} ${WRKSRC}/conf/minion ${DESTDIR}${EGDIR}/
 
-.include "../../lang/python/wheel.mk"
+.include "../../lang/python/egg.mk"
 .include "../../mk/bsd.pkg.mk"
