@@ -1,6 +1,6 @@
 # $NetBSD: Makefile,v 1.53 2024/01/12 13:15:47 adam Exp $
 
-DISTNAME=	pycryptodomex-3.22.0
+DISTNAME=	pycryptodomex-3.20.0
 PKGNAME=	${PYPKGPREFIX}-${DISTNAME:S/^py//}
 CATEGORIES=	security python
 MASTER_SITES=	${MASTER_SITE_PYPI:=p/pycryptodomex/}
