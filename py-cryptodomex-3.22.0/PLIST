@@ -86,12 +86,6 @@ ${PYSITELIB}/Cryptodome/Cipher/_mode_gcm.py
 ${PYSITELIB}/Cryptodome/Cipher/_mode_gcm.pyc
 ${PYSITELIB}/Cryptodome/Cipher/_mode_gcm.pyi
 ${PYSITELIB}/Cryptodome/Cipher/_mode_gcm.pyo
-${PYSITELIB}/Cryptodome/Cipher/_mode_kw.py
-${PYSITELIB}/Cryptodome/Cipher/_mode_kw.pyc
-${PYSITELIB}/Cryptodome/Cipher/_mode_kw.pyo
-${PYSITELIB}/Cryptodome/Cipher/_mode_kwp.py
-${PYSITELIB}/Cryptodome/Cipher/_mode_kwp.pyc
-${PYSITELIB}/Cryptodome/Cipher/_mode_kwp.pyo
 ${PYSITELIB}/Cryptodome/Cipher/_mode_ocb.py
 ${PYSITELIB}/Cryptodome/Cipher/_mode_ocb.pyc
 ${PYSITELIB}/Cryptodome/Cipher/_mode_ocb.pyi
@@ -440,9 +434,6 @@ ${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_EAX.pyo
 ${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_GCM.py
 ${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_GCM.pyc
 ${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_GCM.pyo
-${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_KW.py
-${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_KW.pyc
-${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_KW.pyo
 ${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_OCB.py
 ${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_OCB.pyc
 ${PYSITELIB}/Cryptodome/SelfTest/Cipher/test_OCB.pyo
