@@ -3,3 +3,4 @@ $NetBSD$
 BLAKE2s (salt-3006.12.tar.gz) = ed03bea8f4406e8209b724c9abb341a25bf79802a32574d15219ab86f182651d
 SHA512 (salt-3006.12.tar.gz) = c95a75b5ffb98784ddcb96417ffba5988eee804c188c221817fdba9bef9a3dd3988fd5e5acc78449f6df0392ffefb401637e3dde3db8c0f3c1aeb1596a3a16cd
 Size (salt-3006.12.tar.gz) = 19718210 bytes
+SHA1 (patch-salt_utils_rsax931.py) = 989e24088a55a983f7e404dc29cbffc7ec2f6aa6
