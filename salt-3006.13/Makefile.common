@@ -2,7 +2,7 @@
 # used by sysutils/salt/Makefile
 # used by sysutils/salt-docs/Makefile
 
-DISTNAME=	salt-3006.14
+DISTNAME=	salt-3006.13
 CATEGORIES=	sysutils python
 MASTER_SITES=	${MASTER_SITE_PYPI:=s/salt/}
 
@@ -43,4 +43,4 @@ DEPENDS+=	${PYPKGPREFIX}-zmq>=25.1.2:../../net/py-zmq
 
 USE_LANGUAGES=	# none
 
-PYTHON_VERSIONS_INCOMPATIBLE=	39
+PYTHON_VERSIONS_INCOMPATIBLE=	39 312 313
