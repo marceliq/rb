@@ -31,7 +31,7 @@ DEPENDS+=	${PYPKGPREFIX}-jmespath-[0-9]*:../../textproc/py-jmespath
 DEPENDS+=	${PYPKGPREFIX}-looseversion-[0-9]*:../../devel/py-looseversion
 DEPENDS+=	${PYPKGPREFIX}-markupsafe-[0-9]*:../../textproc/py-markupsafe
 DEPENDS+=	${PYPKGPREFIX}-msgpack>=1.0.0:../../devel/py-msgpack
-DEPENDS+=	${PYPKGPREFIX}-packaging>=21.3:../../devel/py-packaging
+DEPENDS+=	${PYPKGPREFIX}-packaging>=21.3:../../rb/py-packaging
 DEPENDS+=	${PYPKGPREFIX}-psutil>=5.0.0:../../sysutils/py-psutil
 DEPENDS+=	${PYPKGPREFIX}-requests>=2.25.0:../../devel/py-requests
 DEPENDS+=	${PYPKGPREFIX}-setproctitle>=1.2.3:../../sysutils/py-setproctitle
